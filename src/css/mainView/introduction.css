@@ -1,0 +1,112 @@
+.introduction_container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    min-height: 28ch;
+    background-color: #2A2C33FF;
+    align-items: center;
+    @media screen and (max-width: 950px) {
+        flex-direction: column;
+    }
+    user-select: none;
+}
+
+.introduction_content {
+    position: relative;
+    color: white;
+
+    height: max-content;
+    width: 28vw;
+    min-width: 300px;
+
+    align-content: center;
+    justify-items: center;
+
+    border-radius: 10px;
+    border: solid #b7bdbd;
+
+    margin: 75px auto;
+
+    font-family: 华文宋体, serif;
+    font-size: large;
+    text-shadow: white 0 0 2px;
+
+    background-color: #464949;
+    box-shadow: #000000CC 3px 3px 3px;
+
+    @media screen and (max-width: 950px) {
+        width: 80vw;
+        margin: 30px auto;
+    }
+
+    padding: 2rch;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.introduction_content:hover {
+    transform: translate3d(-5px, -5px, 0);
+}
+
+.introduction_content:hover .introduction_bg {
+    transform: translate3d(-5px, -5px, 0);
+}
+
+.introduction_content:hover .introduction_hidden {
+    left: -10px;
+}
+
+.introduction_bg {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: solid #b7bdbd;
+    background-color: #464949;
+    box-shadow: #000000CC 3px 3px 3px;
+    z-index: -10;
+    transition: all 0.5s ease;
+}
+
+.introduction_hidden {
+    position: inherit;
+    top: 0;
+    left: -5px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: left 0.5s ease;
+}
+
+.introduction_title {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 3rch;
+    font-weight: bolder;
+
+    transition: all 0.5s ease;
+}
+
+.introduction_content:hover .introduction_title {
+    transform: translateY(-200vh);
+}
+
+.introduction_text {
+    position: relative;
+    transform: translateY(200%);
+    transition: all 0.5s ease;
+}
+
+.introduction_content:hover .introduction_text {
+    transform: translateY(0%);
+}
+
+#qq_number {
+    user-select: text;
+}

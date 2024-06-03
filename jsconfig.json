@@ -4,6 +4,9 @@
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
+    "types": [
+      "element-plus/global"
+    ],
     "paths": {
       "@/*": [
         "src/*"
