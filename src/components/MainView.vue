@@ -20,9 +20,12 @@
     </el-carousel>
     <div class="introduction_container">
       <div class="introduction_content">
-        <div class="introduction_hidden">
           <div class="introduction_title">
-            <p>简介</p>
+            <img alt="" class="in-title-icon" src="../assets/TUT-logo.svg"/>
+            <div class="in-title-body">
+              <p class="in-title-body-head">简介</p>
+              <p class="in-title-body-foot">introduction</p>
+            </div>
           </div>
           <div class="introduction_text">
             <p>
@@ -32,14 +35,15 @@
               拥有独立物理机和公网能够保证玩家流畅游玩的体验。
             </p>
           </div>
-        </div>
-        <div class="introduction_bg"></div>
       </div>
       <div class="introduction_content">
-        <div class="introduction_hidden">
-          <div class="introduction_title">
-            <p>理念</p>
+        <div class="introduction_title">
+          <img alt="" class="in-title-icon" src="../assets/concept.svg"/>
+          <div class="in-title-body">
+            <p class="in-title-body-head">理念</p>
+            <p class="in-title-body-foot">concept</p>
           </div>
+        </div>
           <div class="introduction_text">
             <p>
               服内实行共产共用的理念。
@@ -54,14 +58,14 @@
               你！总能在这里找到属于自己的一片天地，描绘你在tut的创作小世界。
             </p>
           </div>
-        </div>
-        <div class="introduction_bg"></div>
       </div>
       <div class="introduction_content">
-        <div class="introduction_hidden">
-          <div class="introduction_title">
-            <p>加入我们！</p>
+        <div class="introduction_title">
+          <div class="in-title-body">
+            <p class="in-title-body-head">加入我们</p>
+            <p class="in-title-body-foot">join us, right now</p>
           </div>
+        </div>
           <div class="introduction_text">
             <p>
               如果您对我们感兴趣。
@@ -76,14 +80,14 @@
               我们在这里期待你的到来哦!
             </p>
           </div>
-        </div>
-        <div class="introduction_bg"></div>
       </div>
     </div>
     <div class="players">
-      <div class="player_container">
-        <div class="player_content">
-
+      <h2 id="players_title">管理团队</h2>
+      <div id="players_containers">
+        <div v-for="player in playerList" :key="player.id" class="player_container">
+          <img :alt=player.name :src=player.img class="player_img">
+          <a :href=player.url class="player_url" target="_blank"><p class="player_name">{{ player.name }}</p></a>
         </div>
       </div>
     </div>
@@ -96,6 +100,12 @@ import banner2 from '@/assets/banner/banner2.png';
 import banner3 from '@/assets/banner/banner3.webp';
 import banner4 from '@/assets/banner/banner4.png';
 
+import player1 from '@/assets/players/1.png';
+import player2 from '@/assets/players/2.png';
+import player3 from '@/assets/players/3.png';
+import player4 from '@/assets/players/4.png';
+import player5 from '@/assets/players/5.png';
+
 const imgList = [
   // {img: banner1, top: "25vh", left: "40vw", id: 0},
   // {img: banner2, top: "35vh", left: "40vw", id: 1},
@@ -106,6 +116,14 @@ const imgList = [
   {img: banner3, top: "70vh", left: "15vw", id: 2},
   {img: banner4, top: "70vh", left: "15vw", id: 3}
 ];
+
+const playerList = [
+  {img: player1, id: 1, name: "CaveNightingale", url: "https://space.bilibili.com/362962716"},
+  {img: player2, id: 2, name: "FuYi_Liz", url: "https://space.bilibili.com/476701169"},
+  {img: player3, id: 3, name: "Setchex", url: "https://space.bilibili.com/284853282"},
+  {img: player4, id: 4, name: "Fanzhitianyu", url: "https://space.bilibili.com/3461569335790303"},
+  {img: player5, id: 5, name: "Renyigesai", url: "https://space.bilibili.com/301040272"}
+];
 export default {
   name: 'MainView',
   props: {
@@ -113,7 +131,8 @@ export default {
   },
   data() {
     return {
-      imgList
+      imgList,
+      playerList
     }
   }, methods: {
     changeImg(current) {
@@ -139,6 +158,7 @@ export default {
 <style scoped>
 @import "@/css/mainView/banner.css";
 @import "@/css/mainView/introduction.css";
+@import "@/css/mainView/players.css";
 
 .MainView {
   display: flex;

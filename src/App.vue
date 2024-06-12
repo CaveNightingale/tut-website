@@ -2,7 +2,7 @@
   <!--  <img alt="Vue logo" src="./assets/logo.png.dis">-->
   <!--  <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   <div class="menu">
-    <router-link to="/"><img alt="tut_logo" class="logo" src="./assets/logo.png"></router-link>
+    <router-link to="/"><img alt="tut_logo" class="logo" src="./assets/TUT-logo.svg"></router-link>
     <ul class="pages">
       <li>
         <RouterLink to="/main">主页</RouterLink>
@@ -64,9 +64,10 @@ defineComponent({name: 'App'});
 }
 
 .logo {
-  padding-top: 20px;
-  padding-left: 20px;
-  height: 100px;
+  padding-top: 10px;
+  padding-left: 35px;
+  width: 11rch;
+  height: 11rch;
 }
 
 .pages {
@@ -138,7 +139,7 @@ defineComponent({name: 'App'});
   height: max-content;
   width: 100%;
   z-index: -100;
-  background-color: transparent;
+  background-color: #2a2c33;
   position: relative;
   display: flex;
   justify-content: center;

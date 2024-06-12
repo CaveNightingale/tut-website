@@ -12,9 +12,11 @@
     left: 50%;
 
     transform: translate(-50%, -50%);
-    border-style: none;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
     border-radius: 8px;
-    background: rgba(24, 27, 192, 0.9);
+    background: rgba(188, 207, 234, 0.1);
     box-shadow: #000000CC 0 0 8px;
     text-shadow: white 0 0 2px;
 
@@ -22,7 +24,7 @@
 }
 
 .joinUs-button:hover {
-    background: rgba(19, 54, 231, 0.3);
+    background: rgba(188, 207, 234, 0.4);
 }
 
 .joinUs-button p {
@@ -55,6 +57,8 @@
     font-family: "Microsoft YaHei UI", serif;
     font-weight: bolder;
     text-shadow: #000000CC 0 0 8px;
+    user-select: none;
+    cursor: default;
 
     @media screen and (max-width: 1000px) {
         top: 40vw;
