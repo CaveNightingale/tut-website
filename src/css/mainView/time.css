@@ -1,0 +1,63 @@
+#dtime {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    justify-content: center;
+    position: relative;
+}
+
+#dtime::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.time-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.time-text {
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+
+    font-size: 3rem;
+    color: #eaeaea;
+    font-family: 华文宋体, serif;
+    user-select: none;
+    cursor: default;
+
+    top: 40%;
+
+    line-height: 0;
+
+    letter-spacing: 10px;
+
+    @media screen and (max-width: 1000px) {
+        font-size: 1.5rem;
+    }
+}
+
+#time {
+    font-size: 2rem;
+    @media screen and (max-width: 1000px) {
+        font-size: 1rem;
+    }
+}
+
+.time-container .time-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: Blur(3px);
+}
