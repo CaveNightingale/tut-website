@@ -51,7 +51,7 @@
 <script setup>
 // import HelloWorld from './components/HelloWorld.vue'
 
-import {defineComponent} from "vue";
+import {defineComponent, onMounted} from "vue";
 
 defineComponent({name: 'App'});
 
@@ -74,6 +74,11 @@ function clickMenu() {
     menu_l_pages.style.display = "none";
   }
 }
+
+onMounted(() => {
+  const menu_l_pages = document.getElementById("menu-l-pages");
+  menu_l_pages.style.display = "none";
+});
 </script>
 
 <style>

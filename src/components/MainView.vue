@@ -115,7 +115,7 @@
           <p id="ServerName">TUT-outskirt_un</p>
           <div id="foot_content_body">
             <p>技术支持 / LAS开发组</p>
-            <p>联系我们 / 553214655 (服外交流群)</p>
+            <p>联系我们 / 553214655 <span id="foot_content_o">(服外交流群)</span></p>
           </div>
         </div>
       </div>

@@ -58,12 +58,18 @@
     color: rgba(255, 255, 255, 0.6);
     line-height: 0;
     font-family: 华文宋体, serif;
+    @media screen and (max-width: 340px) {
+        font-size: 0.8rem;
+    }
 }
 
 #ServerName {
     font-size: 1.7rem;
     font-weight: bolder;
     letter-spacing: 1px;
+    @media screen and (max-width: 340px) {
+        font-size: 1.2rem;
+    }
 }
 
 #foot_content_body {
@@ -71,6 +77,13 @@
     line-height: 13px;
     font-weight: normal;
     letter-spacing: 1px;
+}
+
+#foot_content_o {
+    display: inline;
+    @media screen and (max-width: 420px) {
+        display: none;
+    }
 }
 
 #foot_info {
