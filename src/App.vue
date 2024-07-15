@@ -1,84 +1,63 @@
 <template>
-  <!--  <img alt="Vue logo" src="./assets/logo.png.dis">-->
-  <!--  <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   <div class="menu">
     <div id="main-menu">
-      <router-link to="/"><img alt="tut_logo" class="logo" src="./assets/TUT-logo.svg"></router-link>
+      <RouterLink to="/"
+        ><img alt="tut_logo" class="logo" src="./assets/TUT-logo.svg"
+      /></RouterLink>
       <div id="menu-l">
-        <img alt="menu_icon" class="menu_icon" src="./assets/menu.svg" @click="clickMenu"/>
+        <img
+          alt="menu_icon"
+          class="menu_icon"
+          src="./assets/menu.svg"
+          @click="menuExpanded = !menuExpanded"
+        />
       </div>
       <ul class="pages">
         <li>
-          <RouterLink to="/main">主页</RouterLink>
+          <RouterLink to="/">主页</RouterLink>
         </li>
-        <!--        <li>-->
-        <!--          <RouterLink to="/">地图</RouterLink>-->
-        <!--        </li>-->
-        <!--        <li><a href="" target="_blank">博客</a></li>-->
-        <!--        <li>-->
-        <!--          <RouterLink to="/">公告</RouterLink>-->
-        <!--        </li>-->
-        <li><a
+        <li>
+          <a
             href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5UOBd_Q2rJyCvfQCVAkUEBnp788yNQDS&authKey=sscCWikGcRkW8Hk%2BUIFY%2FsN0hBs1KZpoIRNVM2V8XeLacV04Jg9azX2UMQSuWoqm&noverify=0&group_code=553214655"
-            target="_blank">加入我们</a>
+            target="_blank"
+            >加入我们</a
+          >
         </li>
-        <li><a href="https://space.bilibili.com/1851088709" target="_blank">哔哩哔哩</a></li>
+        <li>
+          <a href="https://space.bilibili.com/1851088709" target="_blank"
+            >哔哩哔哩</a
+          >
+        </li>
       </ul>
     </div>
-    <ul id="menu-l-pages">
+    <ul id="menu-l-pages" :style="{ display: menuExpanded ? 'flex' : 'none' }">
       <li>
-        <RouterLink to="/main">主页</RouterLink>
+        <RouterLink to="/">主页</RouterLink>
       </li>
-      <!--      <li>-->
-      <!--        <RouterLink to="/">地图</RouterLink>-->
-      <!--      </li>-->
-      <!--      <li><a href="" target="_blank">博客</a></li>-->
-      <!--      <li>-->
-      <!--        <RouterLink to="/">公告</RouterLink>-->
-      <!--      </li>-->
-      <li><a
+      <li>
+        <a
           href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5UOBd_Q2rJyCvfQCVAkUEBnp788yNQDS&authKey=sscCWikGcRkW8Hk%2BUIFY%2FsN0hBs1KZpoIRNVM2V8XeLacV04Jg9azX2UMQSuWoqm&noverify=0&group_code=553214655"
-          target="_blank">加入我们</a>
+          target="_blank"
+          >加入我们</a
+        >
       </li>
-      <li><a href="https://space.bilibili.com/1851088709" target="_blank">哔哩哔哩</a></li>
+      <li>
+        <a href="https://space.bilibili.com/1851088709" target="_blank"
+          >哔哩哔哩</a
+        >
+      </li>
     </ul>
   </div>
   <div class="page">
-    <RouterView></RouterView>
+    <RouterView />
   </div>
 </template>
 
-<script setup>
-// import HelloWorld from './components/HelloWorld.vue'
+<script setup lang="ts">
+import { ref } from 'vue';
+import { RouterLink, RouterView } from 'vue-router';
 
-import {defineComponent, onMounted} from "vue";
-
-defineComponent({name: 'App'});
-
-window.addEventListener('resize', handleWindowResize);
-
-function handleWindowResize() {
-  const menu_l_pages = document.getElementById("menu-l-pages");
-  if (window.innerWidth > 1000) {
-    if (menu_l_pages.style.display === "flex") {
-      menu_l_pages.style.display = "none";
-    }
-  }
-}
-
-function clickMenu() {
-  const menu_l_pages = document.getElementById("menu-l-pages");
-  if (menu_l_pages.style.display === "none") {
-    menu_l_pages.style.display = "flex";
-  } else {
-    menu_l_pages.style.display = "none";
-  }
-}
-
-onMounted(() => {
-  const menu_l_pages = document.getElementById("menu-l-pages");
-  menu_l_pages.style.display = "none";
-});
+const menuExpanded = ref(false);
 </script>
 
 <style>
@@ -127,10 +106,11 @@ onMounted(() => {
 
 #menu-l {
   display: none;
+  cursor: pointer;
+
   @media screen and (max-width: 1000px) {
     display: inherit;
   }
-  cursor: pointer;
 }
 
 #menu-l img {
@@ -145,20 +125,19 @@ onMounted(() => {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  height: 0;
+
   @media screen and (max-width: 1000px) {
     display: flex;
-
     flex-direction: column;
     position: relative;
     width: 100%;
     height: max-content;
     background-color: rgba(41, 41, 41, 1);
-
     justify-items: center;
     justify-content: center;
   }
 }
-
 
 #menu-l-pages li {
   display: inline;
@@ -173,7 +152,7 @@ onMounted(() => {
   color: #fff;
   text-decoration: none;
   position: relative;
-  font-family: "Microsoft YaHei UI", serif;
+  font-family: 'Microsoft YaHei UI', serif;
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -223,7 +202,9 @@ onMounted(() => {
   display: block;
   box-sizing: border-box;
   border: rgba(218, 59, 187, 0.85) solid 3px;
-  transition: clip-path 0.3s ease-in-out, border-bottom-width 0.3s ease-in-out;
+  transition:
+    clip-path 0.3s ease-in-out,
+    border-bottom-width 0.3s ease-in-out;
   border-radius: 20px;
   border-bottom-color: rgba(124, 184, 238, 0.85);
 }
@@ -269,20 +250,15 @@ onMounted(() => {
 
 #app::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, .5);
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5);
   background-color: transparent;
 }
 
-
-img, a {
-
+img,
+a {
   -webkit-user-drag: none;
-
   -moz-user-drag: none;
-
   -ms-user-drag: none;
-
   user-drag: none;
-
 }
 </style>
