@@ -17,6 +17,9 @@
           <RouterLink to="/">主页</RouterLink>
         </li>
         <li>
+          <RouterLink to="/map">地图</RouterLink>
+        </li>
+        <li>
           <a
             href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5UOBd_Q2rJyCvfQCVAkUEBnp788yNQDS&authKey=sscCWikGcRkW8Hk%2BUIFY%2FsN0hBs1KZpoIRNVM2V8XeLacV04Jg9azX2UMQSuWoqm&noverify=0&group_code=553214655"
             target="_blank"
@@ -33,6 +36,9 @@
     <ul id="menu-l-pages" :style="{ display: menuExpanded ? 'flex' : 'none' }">
       <li>
         <RouterLink to="/">主页</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/map">地图</RouterLink>
       </li>
       <li>
         <a
@@ -71,10 +77,9 @@ const menuExpanded = ref(false);
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
   position: fixed;
   background-color: #5c6563;
-  overflow-y: scroll;
 }
 
 .menu {
@@ -100,8 +105,8 @@ const menuExpanded = ref(false);
 .logo {
   padding-top: 10px;
   padding-left: 35px;
-  width: 11rch;
-  height: 11rch;
+  width: 5.5rem;
+  height: 5.5rem;
 }
 
 #menu-l {
@@ -234,7 +239,7 @@ const menuExpanded = ref(false);
   position: relative;
   display: flex;
   justify-content: center;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   flex-direction: column;
 }
 

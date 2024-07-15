@@ -180,6 +180,7 @@ watchEffect(onCleanup => {
 .main-view {
   display: flex;
   flex-direction: column;
-  height: max-content;
+  height: 100%;
+  overflow-y: auto;
 }
 </style>

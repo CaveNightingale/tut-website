@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "npm run bluemap && vue-tsc -b && vite build",
     "preview": "vite preview",
-    "pretty": "prettier -c prettier.config.json --write ."
+    "pretty": "prettier -c prettier.config.json --write .",
+    "bluemap": "cd lib/BlueMap/BlueMapCommon/webapp && npm install && npm run build"
   },
   "dependencies": {
     "element-plus": "^2.7.7",

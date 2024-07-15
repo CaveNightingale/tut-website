@@ -1,0 +1,3 @@
+[submodule "lib/BlueMap"]
+	path = lib/BlueMap
+	url = https://github.com/BlueMap-Minecraft/BlueMap.git

@@ -9,4 +9,18 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  server: {
+    proxy: {
+      '/bluemap/settings.json': {
+        target: 'http://localhost:8100',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/bluemap/, ''),
+      },
+      '^/bluemap/maps/.*': {
+        target: 'http://localhost:8100',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/bluemap/, ''),
+      }
+    }
+  }
 });
