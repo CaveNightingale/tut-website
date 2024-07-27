@@ -13,10 +13,10 @@
 <script setup lang="ts"></script>
 
 <style lang="scss">
-  .inner-page {
-    position: fixed;
-    bottom: 0;
-    height: calc(100vh - 100px);
-    width: 100%;
-  }
+.inner-page {
+  position: fixed;
+  bottom: 0;
+  height: calc(100vh - 100px);
+  width: 100%;
+}
 </style>

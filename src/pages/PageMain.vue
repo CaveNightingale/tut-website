@@ -119,24 +119,24 @@
 
 <script setup lang="ts">
 import banner1 from '@/assets/banner/banner1.webp';
-import banner2 from '@/assets/banner/banner2.png';
+import banner2 from '@/assets/banner/banner2.webp';
 import banner3 from '@/assets/banner/banner3.webp';
-import banner4 from '@/assets/banner/banner4.png';
+import banner4 from '@/assets/banner/banner4.webp';
 
-import player1 from '@/assets/players/1.png';
-import player2 from '@/assets/players/2.png';
-import player3 from '@/assets/players/3.png';
-import player4 from '@/assets/players/4.png';
-import player5 from '@/assets/players/5.png';
+import player1 from '@/assets/players/1.webp';
+import player2 from '@/assets/players/2.webp';
+import player3 from '@/assets/players/3.webp';
+import player4 from '@/assets/players/4.webp';
+import player5 from '@/assets/players/5.webp';
 
-import time1 from '@/assets/time/1.png';
-import time2 from '@/assets/time/2.png';
-import time3 from '@/assets/time/3.png';
-import time4 from '@/assets/time/4.png';
-import time5 from '@/assets/time/5.png';
-import time6 from '@/assets/time/6.png';
-import time7 from '@/assets/time/7.png';
-import time8 from '@/assets/time/8.png';
+import time1 from '@/assets/time/1.webp';
+import time2 from '@/assets/time/2.webp';
+import time3 from '@/assets/time/3.webp';
+import time4 from '@/assets/time/4.webp';
+import time5 from '@/assets/time/5.webp';
+import time6 from '@/assets/time/6.webp';
+import time7 from '@/assets/time/7.webp';
+import time8 from '@/assets/time/8.webp';
 
 import { ElCarousel, ElCarouselItem } from 'element-plus';
 import { ref, watchEffect } from 'vue';
