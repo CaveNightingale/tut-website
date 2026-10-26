@@ -1,3 +1,6 @@
 [submodule "lib/BlueMap"]
 	path = lib/BlueMap
 	url = https://github.com/BlueMap-Minecraft/BlueMap.git
+[submodule "lib/minecraft_map_renderer"]
+	path = lib/minecraft_map_renderer
+	url = https://github.com/CaveNightingale/minecraft_map_renderer.git

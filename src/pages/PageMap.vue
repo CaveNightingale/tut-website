@@ -2,6 +2,7 @@
   <div class="inner-page">
     <iframe
       src="/bluemap/index.html"
+      title="BlueMap 三维地图"
       width="100%"
       height="100%"
       frameborder="0"
