@@ -32,6 +32,37 @@ server to rebuild the viewer.
 `lib/BlueMap/BlueMapCommon/webapp/dist` (exposed to the app as `public/bluemap`),
 then runs `vue-tsc -b` and `vite build`.
 
+## GitHub Pages
+
+The [deployment workflow](.github/workflows/deploy-pages.yml) runs on pushes to
+`master` and can also be started manually from the Actions tab. It initializes
+both Git submodules, installs dependencies with Node.js 24, builds the site, and
+deploys `dist` using the official GitHub Pages Actions. No personal access token
+or `gh-pages` branch is required.
+
+Before the first deployment:
+
+1. In **Settings > Pages > Build and deployment**, set **Source** to
+   **GitHub Actions**.
+2. Commit `public/CNAME` with the domain `tutserver.top`, set the same custom
+   domain in **Settings > Pages**, and configure the domain's DNS records for
+   GitHub Pages. Enable **Enforce HTTPS** once the certificate is available.
+3. Push to `master`, or run **Deploy to GitHub Pages** from the Actions tab.
+
+The site uses root-relative URLs and Vite's default base `/`, matching the custom
+domain. Hosting at `https://<owner>.github.io/tut-website/` without a custom domain
+would also require updating the Vite base, router base, and root-relative asset
+URLs.
+
+GitHub Pages does not support SPA rewrites. The workflow copies `index.html` to
+`404.html` so direct visits and refreshes on `/map` and `/map/bluemap` still load
+the app and preserve the URL. These requests return HTTP 404 even though the app
+renders correctly; navigation from within the app does not have this limitation.
+
+Pages only serves static files: Vite's development proxy is not available in
+production. The BlueMap viewer is included, but its live settings and map data
+must be hosted separately or provided as static files.
+
 ## Maps
 
 `/map` is the default static-map page. Its left sidebar switches between the
