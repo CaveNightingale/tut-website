@@ -111,7 +111,7 @@
         </div>
       </div>
       <div id="foot_info">
-        <p>©2024 TUT-outskirt_un</p>
+        <p>©2026 TUT-outskirt_un</p>
       </div>
     </div>
   </div>
